@@ -1,0 +1,19 @@
+# Core Scientific & Data Processing
+numpy>=1.22.0
+scipy>=1.8.0
+pandas>=1.4.0
+
+# Machine Learning & Scikit-Learn
+scikit-learn>=1.0.0
+
+# Automatic Differentiation
+jax>=0.4.0
+jaxlib>=0.4.0
+autograd>=1.5
+
+# Visualization
+matplotlib>=3.5.0
+
+# Interactive Development
+jupyter>=1.0.0
+ipython>=8.0.0
