@@ -33,18 +33,21 @@ with added Gaussian noise $\epsilon \sim \mathcal{N}(0, \sigma^2)$.
 
 ```text
 .
-├── src/
-│   ├── models.py         # OLS, Ridge, and Lasso solver classes
-│   ├── optimizers.py     # GD, SGD, Momentum, AdaGrad, RMSprop, Adam implementations
-│   ├── resampling.py     # Custom Bootstrap and K-Fold Cross-Validation functions
-│   └── utils.py          # Data generation (Runge function), scaling, and plotting helpers
-├── notebooks/
-│   └── exploratory.ipynb # Interactive experiments and visualization prototyping
-├── plots/                # High-resolution figures generated for the final report
-├── report.pdf            # Full scientific report formatted per UiO guidelines
-├── main.py               # Main execution script reproducing all results and figures
-├── requirements.txt      # Dependencies
-└── README.md
+├── Results/
+│   ├── Code/
+│   │   ├── basic_code/       # OLS, Ridge, Resampling & basic GD implementations
+│   │   ├── task_g/           # Lasso regression solvers and subgradient methods
+│   │   ├── task_h/           # Stochastic Gradient Descent (SGD) & learning rate schedules
+│   │   └── task_i/           # Final comparative cross-validation model selection
+│   ├── Figs/                 # Plots and figures generated for the analysis
+│   ├── Result_overview/      # Compiled outputs and summary evaluations
+│   └── Project_1_Machine_Learning.pdf # Final scientific report (PDF)
+├── Structure/                # Workflow schematics and organizational files
+├── Tasks/
+│   ├── Project1.ipynb        
+│   ├── Project1.pdf          # Official project problem description
+│   └── Project1.tex          
+└── README.md                 # Project documentation
 
 
 
