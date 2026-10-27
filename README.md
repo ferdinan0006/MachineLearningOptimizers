@@ -1,10 +1,53 @@
-# Project 1 Submission Code
+# Regression Analysis, Resampling Methods, and Gradient Descent
 
-This is the code repository for Applied Data Analysis and Machine Learning.
+This repository contains the implementation, numerical analysis, and scientific report for **Project 1** of **FYS-STK3155 / FYS4155: Data Analysis and Machine Learning** at the University of Oslo (UiO).
+
+The project explores linear regression techniques, resampling methods for model evaluation and selection, and first-order optimization routines applied to **Runge's function**:
+
+$$f(x) = \frac{1}{1 + 25x^2}, \quad x \in [-1, 1]$$
+
+with added Gaussian noise $\epsilon \sim \mathcal{N}(0, \sigma^2)$.
+
+---
+
+## Key Features & Methodologies
+
+### 1. Regression Models
+* **Ordinary Least Squares (OLS):** Closed-form solution via matrix pseudoinverse and SVD; polynomial fitting up to order 15+.
+* **Ridge Regression:** Analytical solution with $l_2$ regularization parameter $\lambda$; study of singular-value shrinkage modes.
+* **Lasso Regression:** Custom subgradient descent and Scikit-Learn comparisons for $l_1$-penalized regression without a closed-form solution.
+
+### 2. Resampling & Model Evaluation
+* **Bias-Variance Tradeoff:** Theoretical derivation and numerical investigation of the bias-variance decomposition using non-parametric **Bootstrap** resampling.
+* **Cross-Validation:** $k$-Fold cross-validation ($k=5, 10$) implemented with proper in-loop feature scaling to prevent data leakage.
+* **Metrics:** Evaluated via Mean Squared Error (MSE) and $R^2$ score.
+
+### 3. Optimization Techniques
+* **Gradient Descent (GD) & Stochastic Gradient Descent (SGD):** Implementation of custom optimizers with fixed and adaptive learning rates.
+* **Gradient Computation:** Exact analytical gradients vs. Automatic Differentiation via `JAX` (`jax.grad`) and `Autograd`.
+* **Advanced Optimizers:** Comparative evaluation of Momentum, AdaGrad, RMSprop, and Adam optimizers across convergence speeds and learning-rate stability relative to the Hessian matrix $\frac{2}{n}X^T X$.
+
+---
+
+## Repository Structure
+
+```text
+.
+├── src/
+│   ├── models.py         # OLS, Ridge, and Lasso solver classes
+│   ├── optimizers.py     # GD, SGD, Momentum, AdaGrad, RMSprop, Adam implementations
+│   ├── resampling.py     # Custom Bootstrap and K-Fold Cross-Validation functions
+│   └── utils.py          # Data generation (Runge function), scaling, and plotting helpers
+├── notebooks/
+│   └── exploratory.ipynb # Interactive experiments and visualization prototyping
+├── plots/                # High-resolution figures generated for the final report
+├── report.pdf            # Full scientific report formatted per UiO guidelines
+├── main.py               # Main execution script reproducing all results and figures
+├── requirements.txt      # Dependencies
+└── README.md
+
+
 
 The Collaborators for Project 1 were: Steffen Pablo Krieg, Johannes Schäfers, Benedikt Schneider, Ferdinand Nilius.
-
-The code belonging to tasks a)-e) is located inside of the file Project1.ipynb.
-The code belonging to the remaining tasks is located inside separate folders, spread across different scripts. Individual Readmes are also contained inside the respective folders.
 
 A quick overview of our results (mostly code output with numerical results) is located in Results_overview/Results.txt
